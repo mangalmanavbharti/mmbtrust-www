@@ -1,0 +1,105 @@
+# Site Configuration
+title: "Mangal Manav Bharti Trust"
+tagline: "सार्वजनिक हित हेतु समर्पित संस्था"
+description: "Mangal Manav Bharti Trust is dedicated to education, knowledge development, and societal advancement."
+url: "https://mangalmanavbharti.org"
+baseurl: ""
+
+# Author & Social
+author:
+  name: "Mangal Manav Bharti Trust"
+  email: "contact@mangalmanavbharti.org"
+
+# Theme
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  initiatives:
+    output: true
+    permalink: /initiatives/:name/
+  people:
+    output: true
+    permalink: /people/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "initiatives"
+    values:
+      layout: "initiative"
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: "person"
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true
+
+# Future posts not published
+future: false
+
+# Build settings
+exclude:
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Trust Branding
+brand:
+  colors:
+    primary: "#0F1B3C" # Adjusted for institutional look
+    secondary: "#D4A574"
+    accent: "#6B7280"
+    background: "#F9FAFB"
+    text: "#111827"
+  fonts:
+    heading: "'Libre Baskerville', Georgia, serif"
+    body: "'Inter', system-ui, sans-serif"
+
+# Trust Info
+trust:
+  name: "मंगल मानव भारती ट्रस्ट"
+  full_name: "Mangal Manav Bharti Trust"
+  location: "Jaipur, Rajasthan, India"
+  email: "contact@mangalmanavbharti.org"
+  
+# Site Structure
+navigation_hi:
+  - title: "होम"
+    url: "/"
+  - title: "ट्रस्ट"
+    url: "/trust/"
+  - title: "पहल"
+    url: "/initiatives/"
+  - title: "सदस्य"
+    url: "/people/"
+  - title: "संपर्क"
+    url: "/contact/"
+  - title: "जुड़ें"
+    url: "/join-us/"
+
+navigation_en:
+  - title: "Home"
+    url: "/en/"
+  - title: "Trust"
+    url: "/en/trust/"
+  - title: "Initiatives"
+    url: "/en/initiatives/"
+  - title: "People"
+    url: "/en/people/"
+  - title: "Contact"
+    url: "/en/contact/"
+  - title: "Join Us"
+    url: "/en/join-us/"

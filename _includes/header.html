@@ -1,0 +1,94 @@
+{% assign current_nav = site.navigation_hi %}
+{% if page.lang == 'en' %}
+    {% assign current_nav = site.navigation_en %}
+{% endif %}
+
+<header>
+    <div class="site-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="flex-grow: 1;">
+            <a href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" class="site-title" style="text-decoration: none;">
+                <div>
+                    <span style="font-family: 'Libre Baskerville', serif; letter-spacing: 0.05em; display: block; color: #0F1B3C;">{% if page.lang == 'en' %}Mangal Manav Bharti Trust{% else %}मंगल मानव भारती ट्रस्ट{% endif %}</span>
+                    <span style="font-size: 0.9rem; color: #6B7280; font-family: 'Inter', sans-serif; display: block; margin-top: 0.2rem; font-weight: 400;">{% if page.lang == 'en' %}An institution dedicated to public good{% else %}सार्वजनिक हित हेतु समर्पित संस्था{% endif %}</span>
+                </div>
+            </a>
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 2rem;">
+            <nav>
+                <ul class="site-nav" style="margin: 0; padding: 0;">
+                    {% for item in current_nav %}
+                    <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            
+            <div class="lang-switch" style="font-weight: 500; font-size: 0.95rem; border-left: 1px solid rgba(0,0,0,0.1); padding-left: 2rem;">
+                {% if page.lang == 'en' %}
+                    {% assign alt_url = page.url | remove_first: '/en/' | prepend: '/' | replace: '//', '/' %}
+                    <a href="{{ alt_url | relative_url }}" style="color: #6B7280; text-decoration: none;">हिंदी</a> <span style="color: #D4A574; margin: 0 0.5rem;">|</span> <span style="color: #0F1B3C; font-weight: 600;">EN</span>
+                {% else %}
+                    {% assign alt_url = page.url | prepend: '/en' %}
+                    {% if page.url == '/' %}{% assign alt_url = '/en/' %}{% endif %}
+                    <span style="color: #0F1B3C; font-weight: 600;">हिंदी</span> <span style="color: #D4A574; margin: 0 0.5rem;">|</span> <a href="{{ alt_url | relative_url }}" style="color: #6B7280; text-decoration: none;">EN</a>
+                {% endif %}
+            </div>
+
+            <button class="menu-toggle" aria-label="Toggle Menu" style="margin-left: -1rem;">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-drawer-overlay"></div>
+<nav class="mobile-drawer">
+    <div class="drawer-header">
+        <span style="font-family: 'Libre Baskerville', serif; font-size: 1.2rem; font-weight: 700; color: #0F1B3C;">{% if page.lang == 'en' %}Mangal Manav{% else %}मंगल मानव भारती{% endif %}</span>
+        <button class="drawer-close" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div style="padding: 1.5rem 1.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 1.5rem;">
+        {% if page.lang == 'en' %}
+            {% assign alt_url = page.url | remove_first: '/en/' | prepend: '/' | replace: '//', '/' %}
+            <a href="{{ alt_url | relative_url }}" style="color: #6B7280; text-decoration: none; font-weight: 500;">हिंदी</a> <span style="color: #0F1B3C; font-weight: 600; margin-left: 0.5rem;">EN</span>
+        {% else %}
+            {% assign alt_url = page.url | prepend: '/en' %}
+            {% if page.url == '/' %}{% assign alt_url = '/en/' %}{% endif %}
+            <span style="color: #0F1B3C; font-weight: 600; margin-right: 0.5rem;">हिंदी</span> <a href="{{ alt_url | relative_url }}" style="color: #6B7280; text-decoration: none; font-weight: 500;">EN</a>
+        {% endif %}
+    </div>
+
+    <ul class="drawer-nav">
+        {% for item in current_nav %}
+        <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const drawerClose = document.querySelector('.drawer-close');
+    const mobileDrawer = document.querySelector('.mobile-drawer');
+    const overlay = document.querySelector('.mobile-drawer-overlay');
+
+    function openDrawer() {
+        mobileDrawer.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+        mobileDrawer.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', openDrawer);
+    if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+    if (overlay) overlay.addEventListener('click', closeDrawer);
+});
+</script>

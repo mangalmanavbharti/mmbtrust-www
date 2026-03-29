@@ -1,0 +1,40 @@
+<footer class="site-footer" style="background-color: transparent; border-top: 1px solid rgba(0,0,0,0.05); padding: 4rem 0 2rem; margin-top: 4rem;">
+    <div class="footer-content" style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+        
+        <div style="margin-bottom: 2rem;">
+            {% if page.lang == 'en' %}
+                <h4 style="color: #0F1B3C; margin-bottom: 1rem; font-size: 1.25rem; font-family: 'Libre Baskerville', serif;">Mangal Manav Bharti Trust</h4>
+                <p style="color: #6B7280; margin-bottom: 0.5rem;"><a href="mailto:contact@mangalmanavbharti.org" style="color: #6B7280; text-decoration: none;">contact@mangalmanavbharti.org</a></p>
+                <p style="color: #6B7280; margin-bottom: 0;">Jaipur, Rajasthan, India</p>
+
+                <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.25rem; font-size: 1.2rem;">
+                    <a href="https://www.linkedin.com/company/mangal-manav-bharti-trust/about" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@mangalmanavbharti" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/mangalmanavbharti" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/mmb_trust" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/mangalmanavbharti" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-github"></i></a>
+                </div>
+            {% else %}
+                <h4 style="color: #0F1B3C; margin-bottom: 1rem; font-size: 1.25rem; font-family: 'Libre Baskerville', serif;">मंगल मानव भारती ट्रस्ट</h4>
+                <p style="color: #6B7280; margin-bottom: 0.5rem;"><a href="mailto:contact@mangalmanavbharti.org" style="color: #6B7280; text-decoration: none;">contact@mangalmanavbharti.org</a></p>
+                <p style="color: #6B7280; margin-bottom: 0;">जयपुर, राजस्थान, भारत</p>
+
+                <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.25rem; font-size: 1.2rem;">
+                    <a href="https://www.linkedin.com/company/mangal-manav-bharti-trust/about" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@mangalmanavbharti" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/mangalmanavbharti" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/mmb_trust" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/mangalmanavbharti" target="_blank" style="color: #6B7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#0F1B3C'" onmouseout="this.style.color='#6B7280'"><i class="fab fa-github"></i></a>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="footer-bottom" style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 2rem;">
+            {% if page.lang == 'en' %}
+                <p style="margin: 0; color: #9CA3AF; font-size: 0.9rem;">&copy; {{ site.time | date: "%Y" }} Mangal Manav Bharti Trust. All rights reserved.</p>
+            {% else %}
+                <p style="margin: 0; color: #9CA3AF; font-size: 0.9rem;">&copy; {{ site.time | date: "%Y" }} मंगल मानव भारती ट्रस्ट। सर्वाधिकार सुरक्षित।</p>
+            {% endif %}
+        </div>
+    </div>
+</footer>
