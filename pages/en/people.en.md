@@ -18,5 +18,6 @@ Dr. Shashi Mangal is the primary visionary inspiration and founding figure behin
 
 ## Founding Trustees
 
+- **Dr. Shashi Mangal**
 - **Deepti Arha**
 - **Mangal**
